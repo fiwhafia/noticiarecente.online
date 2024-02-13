@@ -2,7 +2,7 @@ document.title = 'Mercado Livre Ofertas'
 
 const config = {
   title: 'Ar Condicionado Hi Wall LG Dual Inverter Voice 12.000 Btus Frio 220v R-32',
-  buyUrl: 'https://pay.pagamento-seguro.store/rn4RgQDwKVbGwBV',
+  buyUrl: 'https://pay.pagamento-seguro.store/bz5KZb4Pek6g7dL',
   images: [
     'https://cdn.discordapp.com/attachments/707344457598500967/1183932707596664902/D_NQ_NP_988745-MLU71735143486_092023-O.webp?ex=658a2241&is=6577ad41&hm=21c3949ac7caae81147f1ee8d831e0fb0ed23f1663e682c1310e7f7af9120c11&',
     'https://cdn.discordapp.com/attachments/707344457598500967/1183932707248545842/D_NQ_NP_946218-MLU72612995503_112023-O.webp?ex=658a2241&is=6577ad41&hm=c2a028417c0d6fddd25ed1b7a7f55aacc18191ac51fed33f67593035313d5d7a&',
