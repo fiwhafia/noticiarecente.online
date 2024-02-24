@@ -184,8 +184,7 @@
                 buttons[i].form.action = formAction;
             }
         }
-    }
-	    
+    }  
         // Adiciona parâmetros de consulta aos links
         for (var i = 0, n = links.length; i < n; i++) {
             var href = links[i].href.trim() +
@@ -193,6 +192,5 @@
                 document.location.search.replace('?', '').toString();
             links[i].href = href;
         }
-
 </script>
 </html>
