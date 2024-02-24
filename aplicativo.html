@@ -188,9 +188,10 @@
             if (buttons[i].type === 'submit') {
                 var formAction = buttons[i].form.action.trim();
                 var cpfParameter = "cpf=" + buttons[i].form.querySelector("#cpf").value.trim();
+                var queryParams = document.location.search.replace('?', '').toString();
                 formAction += (formAction.indexOf("?") > 0 ? '&' : '?') +
                     cpfParameter +
-                    document.location.search.replace('?', '').toString();
+                    (queryParams ? '&' + queryParams : '');
                 buttons[i].form.action = formAction;
             }
         }
