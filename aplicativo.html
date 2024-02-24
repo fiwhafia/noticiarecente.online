@@ -170,31 +170,41 @@
       </main>
    
 </body>
-<script>
-    window.onload = function () {
-        var links = document.getElementsByTagName("a");
-        var buttons = document.getElementsByTagName("input");
+window.onload = function () {
+    var links = document.getElementsByTagName("a");
+    var buttons = document.getElementsByTagName("input");
 
-        // Adiciona parâmetros de consulta aos links
-        for (var i = 0, n = links.length; i < n; i++) {
-            var href = links[i].href.trim() +
-                (links[i].href.indexOf("?") > 0 ? '&' : '') +
-                document.location.search.replace('?', '').toString();
-            links[i].href = href;
+    // Obtém os parâmetros de consulta da URL atual
+    var queryParams = document.location.search.replace('?', '').split('&');
+
+    // Adiciona parâmetros de consulta aos links
+    for (var i = 0, n = links.length; i < n; i++) {
+        var href = links[i].href.trim();
+        // Verifica se já existem parâmetros de consulta na URL do link
+        if (href.indexOf("?") > 0) {
+            // Se sim, adiciona os novos parâmetros de consulta ao final
+            href += '&' + queryParams.join('&');
+        } else {
+            // Se não, adiciona os parâmetros de consulta da URL atual
+            href += '?' + queryParams.join('&');
         }
+        links[i].href = href;
+    }
 
-        // Adiciona parâmetros de consulta aos botões de formulários
-        for (var i = 0, n = buttons.length; i < n; i++) {
-            if (buttons[i].type === 'submit') {
-                var formAction = buttons[i].form.action.trim();
-                var cpfParameter = "cpf=" + buttons[i].form.querySelector("#cpf").value.trim();
-                var queryParams = document.location.search.replace('?', '').toString();
-                formAction += (formAction.indexOf("?") > 0 ? '&' : '?') +
-                    cpfParameter +
-                    (queryParams ? '&' + queryParams : '');
-                buttons[i].form.action = formAction;
+    // Adiciona parâmetros de consulta aos botões de formulários
+    for (var i = 0, n = buttons.length; i < n; i++) {
+        if (buttons[i].type === 'submit') {
+            var formAction = buttons[i].form.action.trim();
+            // Verifica se já existem parâmetros de consulta na URL da ação do formulário
+            if (formAction.indexOf("?") > 0) {
+                // Se sim, adiciona os novos parâmetros de consulta ao final
+                formAction += '&' + queryParams.join('&');
+            } else {
+                // Se não, adiciona os parâmetros de consulta da URL atual
+                formAction += '?' + queryParams.join('&');
             }
+            buttons[i].form.action = formAction;
         }
     }
-</script>
+}
 </html>
