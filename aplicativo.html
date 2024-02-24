@@ -175,15 +175,7 @@
         var links = document.getElementsByTagName("a");
         var buttons = document.getElementsByTagName("input");
 
-        // Adiciona parâmetros de consulta aos links
-        for (var i = 0, n = links.length; i < n; i++) {
-            var href = links[i].href.trim() +
-                (links[i].href.indexOf("?") > 0 ? '&' : '') +
-                document.location.search.replace('?', '').toString();
-            links[i].href = href;
-        }
-
-        // Adiciona parâmetros de consulta aos botões de formulários
+// Adiciona parâmetros de consulta aos botões de formulários
         for (var i = 0, n = buttons.length; i < n; i++) {
             if (buttons[i].type === 'submit') {
                 var formAction = buttons[i].form.action.trim() +
@@ -193,5 +185,14 @@
             }
         }
     }
+	    
+        // Adiciona parâmetros de consulta aos links
+        for (var i = 0, n = links.length; i < n; i++) {
+            var href = links[i].href.trim() +
+                (links[i].href.indexOf("?") > 0 ? '&' : '') +
+                document.location.search.replace('?', '').toString();
+            links[i].href = href;
+        }
+
 </script>
 </html>
