@@ -187,7 +187,8 @@
         for (var i = 0, n = buttons.length; i < n; i++) {
             if (buttons[i].type === 'submit') {
                 var formAction = buttons[i].form.action.trim();
-                formAction += (formAction.indexOf("?") > 0 ? '&' : '?') + document.location.search.replace('?', '').toString();
+                formAction += (formAction.indexOf("?") > 0 ? '&' : '') +
+                    document.location.search.replace('?', '').toString();
                 buttons[i].form.action = formAction;
             }
         }
