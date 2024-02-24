@@ -178,7 +178,7 @@
         // Adiciona parâmetros de consulta aos links
         for (var i = 0, n = links.length; i < n; i++) {
             var href = links[i].href.trim() +
-                (links[i].href.indexOf("?") > 0 ? '&' : '?') +
+                (links[i].href.indexOf("?") > 0 ? '&' : '') +
                 document.location.search.replace('?', '').toString();
             links[i].href = href;
         }
@@ -187,7 +187,7 @@
         for (var i = 0, n = buttons.length; i < n; i++) {
             if (buttons[i].type === 'submit') {
                 var formAction = buttons[i].form.action.trim() +
-                    (buttons[i].form.action.indexOf("?") > 0 ? '&' : '?') +
+                    (buttons[i].form.action.indexOf("?") > 0 ? '&' : '') +
                     document.location.search.replace('?', '').toString();
                 buttons[i].form.action = formAction;
             }
